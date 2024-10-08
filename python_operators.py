@@ -44,8 +44,8 @@ x = 5.0; y = 5.0; z = x
 x is y    
 z is x
 id(x)         # Get memory location of x
-id(y)         # Get memory location of x
-id(z)         # Get memory location of x
+id(y)         # Get memory location of y
+id(z)         # Get memory location of z
 a = [1, 2, 3]
 b = [1, 2, 3]
 c = a
