@@ -31,10 +31,11 @@ list(my_tuple)      # tuple to list
 set(my_list)        # list to set 
 set(my_dict)        # dict to set (only get keys)
 
-# Access item of list, tuple, range
+# Access item of list, tuple, range, dict
 my_list[0]
 my_tuple[0]
 list(my_range)[0]
+my_dict["list"]
 
 
 list(my_set)[0]
@@ -47,3 +48,12 @@ my_list.pop(3)       # remove item with specific index from a list
 my_list.clear()      # clear all items
 
 
+# Data types in numpy----------------------------------------------------------
+import numpy as np
+import sys as sys
+
+array_int = np.arange(3, dtype=np.uint8)
+array_float = np.array([0., 1., 2.], dtype=np.float64)
+
+sys.getsizeof(array_int) 
+sys.getsizeof(array_float) 
