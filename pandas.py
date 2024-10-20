@@ -6,22 +6,23 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Read data from .csv file
+# Read data
 df = pd.read_csv("C:/examples/titanic.csv", sep=",", header=0)
 
-# Explore the data
-df.index                        # Show row index
-df.columns                      # Show column names
-df.shape                        # Show shape
-df.loc[:, ["Age", "Fare"]]      # Acess all valus in certain columns
-df.loc[1, "Age"]                # Get value of a specific cell
-df.rename(columns={"Ticket": "ticket", "Cabin": "cabin"}, inplace=True)
+# Explore data
+df.index                         # Get row index
+df.columns                       # Get column names
+df.shape                         # Get number of rows and columns
+df.loc[:, ["Age", "Fare"]]       # Get all values of columns Age and Fare
+df.loc[[0, 2, 4],:]              # Get all values of rows index 0, 2, 4
+df.loc[0, "Age"]                 # Get value of row index 0 and column Age
+df.rename(columns={"Ticket":"new_ticket", "Cabin":"new_cabin"}, inplace=True)
 
 # Subset of data frame
 df[["Age", "Fare"]]
 df[df["Age"] > 50]
-df[df["Pclass"].isin([1,2])]
-df[(df["Age"] > 50) | (df["Pclass"] > 2)]
+df[df["Pclass"].isin([2, 3])]
+df[df["Age"] > 50 | (df["Pclass"] > 2)]
 
 # Statistics
 df.loc[:, ["Age", "Fare"]].max(axis=0)
@@ -34,11 +35,12 @@ df["Survived_Age"] = df["Survived"] * df["Age"]
 df.plot(y="Age", kind="hist")
 plt.show()
 
+df.plot(y=["Fare", "Age"], kind="box", subplots=True)
+plt.show()
+
 df.plot(x="Age", y="Fare", kind="scatter", alpha=0.5)
 plt.show()
 
-df.plot(y=["Age", "Fare"], kind="box", subplots=True)
-plt.show()
 
 # Save data
 df.to_csv("C:/examples/new_titanic.csv", index=False)
