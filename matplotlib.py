@@ -1,5 +1,8 @@
 #-----------------------------------------------------------------------------#
-#         The link to this code is in the video description                   #                                  #
+#         The link to this code is in the video description                   # 
+# For Sypder users: You could change the way your plot appears in Spyder by   #
+# Tools => Preferences => IPython Console => Graphics => Inline Backend       #
+# => (Resolution = 600, Width = 7, Height = 3)                                #
 #-----------------------------------------------------------------------------#
 
 import matplotlib.pyplot as plt
